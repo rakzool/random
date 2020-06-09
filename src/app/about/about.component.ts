@@ -11,15 +11,15 @@ import { LeaderService } from '../services/leader.service';
 })
 export class AboutComponent implements OnInit {
 
-  leaders: Leader;
+  leaders : Leader[];
 
   constructor(private leaderservice: LeaderService,
     private route: ActivatedRoute,
     private location: Location) { }
 
   ngOnInit() {
-    let id = this.route.snapshot.params['id'];
-    this.leaders = this.leaderservice.getLeader(id);
+     this.leaderservice.getLeaders()
+     .subscribe(leaders => this.leaders = leaders);
   }
 
 }

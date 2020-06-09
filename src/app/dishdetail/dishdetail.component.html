@@ -26,10 +26,10 @@ fxLayoutGap.xs="0">
   </mat-card>
 </div>
 
+
 <div fxFlex="40" fxLayout="column" class = "mar" *ngIf = "dish">
    
    
- <!--<h1 class="cm" >Comments</h1>-->
     <mat-list fxFlex>
      
       <h1 class="cm" >Comments</h1>
@@ -53,6 +53,9 @@ fxLayoutGap.xs="0">
       </mat-list-item>
     </mat-list>
   
+</div>
+<div [hidden]="dish">
+  <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
 </div>
  
 </div>
